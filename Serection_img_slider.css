@@ -1,0 +1,30 @@
+#slider {
+  width: 780px;
+  margin-bottom: 15px;
+}
+
+#slider_div button {
+  width: 200px;
+  margin: 0 5px;
+}
+
+#slider_div>div {
+  display: flex;
+  justify-content: center;
+}
+
+.slider_div>button {
+  position: relative;
+  left: 190px;
+  padding: 10px;
+  width: 200px;
+  font-size: 30px;
+  border-radius: 20px;
+  border: 1px solid blue;
+  color: blue;
+}
+
+.slider_div>button:hover {
+  background-color: blue;
+  color: white;
+}

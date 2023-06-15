@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #page {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    main {
+      display: flex;
+      background-color: rgb(232, 231, 230);
+    }
+
+    header,
+    nav,
+    footer {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+    }
+  </style>
+
+  <link rel="stylesheet" href="Header.css">
+  <link rel="stylesheet" href="Nav.css">
+  <link rel="stylesheet" href="Aside.css">
+  <link rel="stylesheet" href="Serection.css">
+  <link rel="stylesheet" href="Serection_img_slider.css">
+  <link rel="stylesheet" href="Footer.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Nanum+Gothic:wght@400;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="page">
+    <header>
+      <h1 style="position: relative; left: 20px;">ICIA</h1>
+      <div id="Search">
+        <input id="sur" type="text" placeholder="검색어 입력">
+        <button id="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </div>
+      <div id="icon">
+        <ul>
+          <li><i class="fa-solid fa-house"></i></li>
+          <li><i class="fa-solid fa-rotate-right"></i></li>
+          <li><i class="fa-solid fa-comments"></i></li>
+        </ul>
+      </div>
+    </header>
+    <nav>
+      <ul class="Menu_center">
+        <li><a href="#" class="Menu">HOME</a></li>
+        <li><a href="#" class="Menu">LOGIN</a></li>
+        <li><a href="#" class="Menu">JOIN</a></li>
+        <li><a href="#" class="Menu">FIND</a></li>
+      </ul>
+    </nav>
+    <main>
+      <aside></aside>
+      <section>
+        <div>
+          <div class="slider_div">
+            <img id="slider" src="img/slider1.jpg">
+            <button type="button" class="btn btn-outline-primary" onclick="prevClick()">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button type="button" class="btn btn-outline-primary" onclick="nextClick()">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <aside></aside>
+    </main>
+    <footer>copyright &copy;2023 All Right Reserved</footer>
+  </div>
+  <script>
+    const images = [];
+    images[0] = 'img/slider1.jpg';
+    images[1] = 'img/slider2.jpg';
+    images[2] = 'img/slider3.jpg';
+    images[3] = 'img/slider4.jpg';
+    let index = 0;
+
+    const prev = document.querySelector('#prev');
+    const next = document.querySelector('#next');
+    const slider = document.querySelector('#slider');
+    slider.setAttribute('src', images[0]);
+
+    function prevClick() {
+      index--;
+      if (index < 0)
+        index = 3;
+      slider.setAttribute('src', images[index]);
+    }
+
+    function nextClick() {
+      index++;
+      if (index > 3)
+        index = 0;
+      slider.setAttribute('src', images[index]);
+    }
+  </script>
+
+
+</body>
+
+</html>
